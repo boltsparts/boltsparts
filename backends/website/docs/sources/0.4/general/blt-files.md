@@ -4,7 +4,7 @@
 ---
 
 blt files contain most of the backend independent data. There is one blt file
-for each each collection, which provides the information about all the classes
+for each collection, which provides the information about all the classes
 of the collection.
 
 ### Creating a new collection
@@ -238,8 +238,8 @@ one, linking the nominal diameter to the inner and outer diameter. Table
 Indices should always be strings in YAML, so when there is ambiguity (as it is
 here), enclose it by quotes.
 
-If there are confusions or open questions or other things that you feel should
-be communicated to people that might to work on this informationn in the
+If there are confusions, open questions or other things that you feel should
+be communicated to people that might do work on this information in the
 future, it can be put in the notes field. We put a short notice that we found
 more tables but with conflicting data.
 
