@@ -4,7 +4,7 @@
 ---
 
 The aim of BOLTS is to build a free and open-source standard parts library that
-is not tied to a specific CAD applications. For this reason all the data
+is not tied to a specific CAD application. For this reason all the data
 necessary to make the parts available is structured in a certain way: There is
 backend independent data and backend specific data, where backend refers to the
 different CAD applications (for now FreeCAD and OpenSCAD). By making this
