@@ -75,6 +75,7 @@ def export(args):
     #     from backends.solidworks import SolidWorksBackend
     #     SolidWorksBackend(repo,dbs).write_output(out_path,"development")
     elif args.target == "iges":
+        dbs["freecad"] = FreeCADData(repo)
         from backends.exchange import IGESBackend
         IGESBackend(repo, dbs).write_output(out_path, "development")
     elif args.target == "website":

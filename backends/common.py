@@ -109,7 +109,7 @@ class Backend:
                 join(geom_module_path, "readme.md")
             )
 
-        for coll, in self.repo.itercollections():
+        for coll, in self.repo.itercollections(): # the , has to be there!
 
             # skip if license does not fit
             if not self.license.is_combinable_with(
@@ -127,6 +127,7 @@ class Backend:
                 print("Skip %s due to missing base file" % coll.id)
                 continue
 
+            # print("base file %s" % coll.id)
             copy(
                 join(self.repo.path, "data", "%s.blt" % coll.id),
                 join(self.bout_path, "data", "%s.blt" % coll.id)

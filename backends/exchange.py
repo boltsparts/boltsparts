@@ -15,9 +15,9 @@
 #License along with this library; if not, write to the Free Software
 #Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 
-from errors import *
+from .errors import MissingFreeCADError
 
-FREECADPATH = '/usr/lib/freecad/lib/'  # path to your FreeCAD.so or FreeCAD.dll file
+FREECADPATH = "/usr/local/lib/"  # path to your FreeCAD.so or FreeCAD.dll file
 import sys
 sys.path.append(FREECADPATH)
 try:
@@ -32,7 +32,7 @@ from os import makedirs, remove
 from datetime import datetime
 import importlib
 
-from common import Backend
+from .common import Backend
 
 def add_part(base,params,doc):
     module = importlib.import_module(base.module_name)
@@ -59,12 +59,19 @@ class IGESBackend(Backend):
         write_bytecode = sys.dont_write_bytecode
         sys.dont_write_bytecode = True
 
-        for coll in self.repo.itercollections():
+        for coll, in self.repo.itercollections(): # the , has to be there!
+
+            # print("coll id %s" % coll.id)
+            
             if not exists(join(ver_root,coll.id)):
                 makedirs(join(ver_root,coll.id))
 
             sys.path.append(join(self.repo.path,"freecad",coll.id))
             for cl,base in self.dbs["freecad"].iterclasses(["class","base"],filter_collection=coll):
+
+                # print(cl)
+                # print(base)
+
                 if cl.parameters.common is None:
                     continue
 
