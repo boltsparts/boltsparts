@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<package format="1" xmlns="https://wiki.freecad.org/Package_Metadata">
+
+  <name>boltsfc</name>
+
+  <description>Installable FreeCAD package of BOLTS, an Open Library for Technical Specifications.</description>
+
+  <version>2022.11.5</version>
+
+  <date>2022-11-05</date>
+
+  <maintainer email="bernd@bimstatik.org">Bernd Hahnebach</maintainer>
+
+  <license file="BOLTS/LICENSE">LGPLv2.1</license>
+
+  <pythonmin>3.5.0</pythonmin>
+
+  <url branch="main" type="repository">https://github.com/boltsparts/boltsfc</url>
+
+  <url type="readme">https://github.com/boltsparts/boltsfc/raw/main/README.md</url>
+
+  <icon>BOLTS/icons/BOLTS_logo.svg</icon>
+
+</package>
