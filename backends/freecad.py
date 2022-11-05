@@ -56,6 +56,11 @@ class FreeCADBackend(Backend):
             join(self.repo.path, "backends", "freecad", "README.md"),
             join(out_path, "README.md")
         )
+        # copy FreeCAD AddOn manager file
+        copyfile(
+            join(self.repo.path, "backends", "freecad", "package.xml"),
+            join(out_path, "package.xml")
+        )
         
         # bout_path
         self.bout_path = join(out_path, "BOLTS")
