@@ -38,13 +38,40 @@ class FreeCADBackend(Backend):
         self.license = license
 
         self.clear_output_dir(out_path)
-        self.bout_path = join(out_path, "BOLTS")
 
-        # generate macro
+        # out_path
+        # generate start macro file
         start_macro = open(join(out_path, "start_bolts.FCMacro"), "w")
         start_macro.write("import BOLTS\n")
         start_macro.write("BOLTS.show_widget()\n")
         start_macro.close()
+
+        # generate gitignore file
+        file_gitignore = open(join(out_path, ".gitignore"), "w")
+        file_gitignore.write("*.pyc\n")
+        file_gitignore.close()
+
+        # copy repo readme file
+        copyfile(
+            join(self.repo.path, "backends", "freecad", "README.md"),
+            join(out_path, "README.md")
+        )
+        
+        # bout_path
+        self.bout_path = join(out_path, "BOLTS")
+
+        # copy backend/freecad directory
+        if not self.license.is_combinable_with("LGPL 2.1+", self.args["target_license"]):
+            raise IncompatibleLicenseError(
+                "FreeCAD gui files are LGPL 2.1+, "
+                "which is not compatible with {}"
+                .format(self.args["target_license"])
+            )
+        copytree(
+            join(self.repo.path, "backends", "freecad", "BOLTS"),
+            join(self.bout_path)
+        )
+        open(join(self.bout_path, "gui", "__init__.py"), "w").close()
 
         # copy files bolttools
         if not self.license.is_combinable_with("LGPL 2.1+", self.args["target_license"]):
@@ -73,37 +100,13 @@ class FreeCADBackend(Backend):
         )
         version_file.close()
 
-        # copy freecad directory in backend
-        if not self.license.is_combinable_with("LGPL 2.1+", self.args["target_license"]):
-            raise IncompatibleLicenseError(
-                "FreeCAD gui files are LGPL 2.1+, "
-                "which is not compatible with {}"
-                .format(self.args["target_license"])
-            )
-        if not exists(join(self.bout_path, "freecad")):
-            makedirs(join(self.bout_path, "freecad"))
-        open(join(self.bout_path, "freecad", "__init__.py"), "w").close()
-
-        copytree(
-            join(self.repo.path, "backends", "freecad", "app"),
-            join(self.bout_path, "app")
-        )
-        copytree(
-            join(self.repo.path, "backends", "freecad", "gui"),
-            join(self.bout_path, "gui")
-        )
-        copytree(
-            join(self.repo.path, "backends", "freecad", "assets"),
-            join(self.bout_path, "assets")
-        )
+        # copy icons
         copytree(
             join(self.repo.path, "icons"),
             join(self.bout_path, "icons")
         )
-        copyfile(
-            join(self.repo.path, "backends", "freecad", "init.py"),
-            join(self.bout_path, "__init__.py")
-        )
+
+        # copy backends/common
         copyfile(
             join(self.repo.path, "backends", "common", "repo_tools.py"),
             join(self.bout_path, "repo_tools.py")
@@ -112,7 +115,9 @@ class FreeCADBackend(Backend):
             join(self.repo.path, "backends", "common", "README.md"),
             join(self.bout_path, "README.md")
         )
-        open(join(self.bout_path, "gui", "__init__.py"), "w").close()
 
         # copy data and creator modules
+        if not exists(join(self.bout_path, "freecad")):
+            makedirs(join(self.bout_path, "freecad"))
+        open(join(self.bout_path, "freecad", "__init__.py"), "w").close()
         self.copy_data_and_creator_modules()
