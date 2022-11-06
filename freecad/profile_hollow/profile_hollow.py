@@ -33,9 +33,13 @@ def rectangle_hollow(params, document):
     le = params["l"]
     name = params["name"]
 
-    # Definition in EN standard
-    ri = 1.0 * t
-    ro = 1.5 * t
+    if "ri" in params and "ro" in params:
+        ri = params["ri"]
+        ro = params["ro"]
+    else:
+        # Definition in EN standard hot rolled sections
+        ri = 1.0 * t
+        ro = 1.5 * t
 
     # outer rectangle, going clockwise
     Vor1 = Vector((b / 2), (h / 2 - ro), 0)
@@ -116,9 +120,13 @@ def square_hollow(params, document):
     le = params["l"]
     name = params["name"]
 
-    # Definition in EN standard
-    ri = 1.0 * t
-    ro = 1.5 * t
+    if "ri" in params and "ro" in params:
+        ri = params["ri"]
+        ro = params["ro"]
+    else:
+        # Definition in EN standard hot rolled sections
+        ri = 1.0 * t
+        ro = 1.5 * t
 
     # outer rectangle, going clockwise
     Vor1 = Vector((b / 2), (b / 2 - ro), 0)
