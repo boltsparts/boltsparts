@@ -243,16 +243,20 @@ classes:
       b: outside dimension
       l: profile length
       t: web thickness
+      ri: inner radius
+      ro: outer radius
       type: profile type
     free: [type, l]
     tables:
-      columns: [b, t]
+      columns: [b, t, ri, ro]
       data: !include profile_hollow/hollow_square.yaml
       index: type
     types:
       b: Length (mm)
       l: Length (mm)
       t: Length (mm)
+      ri: Length (mm)
+      ro: Length (mm)
       type: Table Index
   source: EN 10210-2:2006, Table B.2
   standards:
@@ -284,10 +288,12 @@ classes:
       h: outside dimension height
       l: profile length
       t: web thickness
+      ri: inner radius
+      ro: outer radius
       type: profile type
     free: [type, l]
     tables:
-      columns: [h, b, t]
+      columns: [h, b, t, ri, ro]
       data: !include profile_hollow/hollow_rectangular.yaml
       index: type
     types:
@@ -295,6 +301,8 @@ classes:
       h: Length (mm)
       l: Length (mm)
       t: Length (mm)
+      ri: Length (mm)
+      ro: Length (mm)
       type: Table Index
   source: EN 10210-2:2006, Table B.3
   standards:
