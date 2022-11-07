@@ -100,7 +100,7 @@ classes:
   parameters:
     defaults:
       l: 1000
-      type: 15CHS26
+      type: 165.1x5.4 CHS
     description:
       D: outside diameter
       l: profile length
@@ -116,7 +116,7 @@ classes:
       l: Length (mm)
       t: Length (mm)
       type: Table Index
-  source: https://cdn.dcs.bluescope.com.au/download/the-lysaght-referee-35th-edition#page=292
+  source: https://www.steel.org.au/resources/elibrary/resources/design-capacity-tables-for-structural-steel-hollow/ (pages 28-30)
   standards:
     body: None
     description: BlueScope hot finished structural circular hollow sections of non-alloy and fine grain steel
@@ -132,23 +132,27 @@ classes:
   parameters:
     defaults:
       l: 1000
-      type: 13SHS18
+      type: 50x6.0 SHS
     description:
+      ri: inner fillet radius
+      ro: outer fillet radius
       b: outside dimension
       l: profile length
       t: web thickness
       type: profile type
     free: [type, l]
     tables:
-      columns: [b, t]
+      columns: [ri, ro, b, t]
       data: !include profile_hollow/hollow_bluescope_square.yaml
       index: type
     types:
+      ri: Length (mm)
+      ro: Length (mm)
       b: Length (mm)
       l: Length (mm)
       t: Length (mm)
       type: Table Index
-  source: https://cdn.dcs.bluescope.com.au/download/the-lysaght-referee-35th-edition#page=288
+  source: https://www.steel.org.au/resources/elibrary/resources/design-capacity-tables-for-structural-steel-hollow/ (pages 35-38)
   standards:
     body: None
     description: BlueScope hot finished structural square hollow sections of non-alloy and fine grain steel
@@ -164,8 +168,10 @@ classes:
   parameters:
     defaults:
       l: 1000
-      type: 38x25RHS20
+      type: 75x25x2.5 RHS
     description:
+      ri: inner fillet radius
+      ro: outer fillet radius
       b: outside dimension width
       h: outside dimension height
       l: profile length
@@ -173,16 +179,18 @@ classes:
       type: profile type
     free: [type, l]
     tables:
-      columns: [b, h, t]
+      columns: [ri, ro, b, h, t]
       data: !include profile_hollow/hollow_bluescope_rectangular.yaml
       index: type
     types:
+      ri: Length (mm)
+      ro: Length (mm)
       b: Length (mm)
       h: Length (mm)
       l: Length (mm)
       t: Length (mm)
       type: Table Index
-  source: https://cdn.dcs.bluescope.com.au/download/the-lysaght-referee-35th-edition#page=284
+  source: https://www.steel.org.au/resources/elibrary/resources/design-capacity-tables-for-structural-steel-hollow/ (pages 31-34)
   standards:
     body: None
     description: BlueScope hot finished structural rectangular hollow sections of non-alloy and fine grain steel

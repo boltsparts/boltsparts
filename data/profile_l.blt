@@ -34,7 +34,7 @@ classes:
   parameters:
     defaults:
       l: 1000
-      type: 200EA26
+      type: 200x26 EA
     description:
       a: beam width
       l: beam length
@@ -54,7 +54,7 @@ classes:
       r2: Length (mm)
       t: Length (mm)
       type: Table Index
-  source: https://cdn.dcs.bluescope.com.au/download/the-lysaght-referee-35th-edition#page=252
+  source: One Steel Manufacturing Hot Rolled and Structured Steel Products 7th Ed. (pages 23-25)
   standards:
     body: None
     description: corner profile profile, metric Australia Lysaght equal-side l-beam profile
@@ -70,7 +70,7 @@ classes:
   parameters:
     defaults:
       l: 1000
-      type: 150x100UA12
+      type: 150x100x12 UA
     description:
       a: beam height
       b: beam width
@@ -92,7 +92,7 @@ classes:
       r2: Length (mm)
       t: Length (mm)
       type: Table Index
-  source: https://cdn.dcs.bluescope.com.au/download/the-lysaght-referee-35th-edition#page=254
+  source: One Steel Manufacturing Hot Rolled and Structured Steel Products 7th Ed. (pages 26-28)
   standards:
     body: None
     description: corner profile profile, metric Australia Lysaght unequal-side l-beam profile
