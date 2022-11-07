@@ -27,6 +27,85 @@ from Part import makeCircle, makeLine
 from DraftGeomUtils import fillet as draft_fillet
 
 
+def ibeam_parallel_flange_no_fillet(params, document):
+
+    # key = params['type']  # not used
+    h = params["h"]
+    b = params["b"]
+    tf = params["tf"]
+    tw = params["tw"]
+    le = params["l"]
+    name = params["name"]
+
+    # lower flange, starting at the left web, going counter-clockwise
+    Vlf1 = Vector((-tw / 2), (-h / 2 + tf), 0)
+    Vlf2 = Vector(-b / 2, (-h / 2 + tf), 0)
+    Vlf3 = Vector(-b / 2, -h / 2, 0)
+    Vlf4 = Vector(b / 2, -h / 2, 0)
+    Vlf5 = Vector(b / 2, (-h / 2 + tf), 0)
+    Vlf6 = Vector((tw / 2), (-h / 2 + tf), 0)
+    Llf1 = makeLine(Vlf1, Vlf2)
+    Llf2 = makeLine(Vlf2, Vlf3)
+    Llf3 = makeLine(Vlf3, Vlf4)
+    Llf4 = makeLine(Vlf4, Vlf5)
+    Llf5 = makeLine(Vlf5, Vlf6)
+
+    # upper flange, starting at the right web, going clockwise
+    Vuf1 = Vector(tw / 2, (h / 2 - tf), 0)
+    Vuf2 = Vector(b / 2, (h / 2 - tf), 0)
+    Vuf3 = Vector(b / 2, h / 2, 0)
+    Vuf4 = Vector(-b / 2, h / 2, 0)
+    Vuf5 = Vector(-b / 2, (h / 2 - tf), 0)
+    Vuf6 = Vector((-tw / 2), (h / 2 - tf), 0)
+    Luf1 = makeLine(Vuf1, Vuf2)
+    Luf2 = makeLine(Vuf2, Vuf3)
+    Luf3 = makeLine(Vuf3, Vuf4)
+    Luf4 = makeLine(Vuf4, Vuf5)
+    Luf5 = makeLine(Vuf5, Vuf6)
+
+    # web, starting right bottom, going counter-clockwise
+    Vw1 = Vector(tw / 2, (-h / 2 + tf), 0)
+    Vw2 = Vector(tw / 2, (h / 2 - tf), 0)
+    Vw3 = Vector(-tw / 2, (h / 2 - tf), 0)
+    Vw4 = Vector(-tw / 2, (-h / 2 + tf), 0)
+    Lw1 = makeLine(Vw1, Vw2)
+    Lw2 = makeLine(Vw3, Vw4)
+
+    # putting the segments together make a wire, a face and extrude it
+    W = Part.Wire([
+        Llf1,
+        Llf2,
+        Llf3,
+        Llf4,
+        Llf5,
+        Lw1,
+        Luf1,
+        Luf2,
+        Luf3,
+        Luf4,
+        Luf5,
+        Lw2,
+    ])
+    F = Part.Face(W)
+
+    if params["arch"]:
+        from ArchStructure import makeStructure
+
+        part = makeStructure(name=name)
+
+        prof = document.addObject("Part::Feature", "Profile")
+        prof.Shape = F
+        part.Base = prof
+
+        part.Height = le
+    else:
+        part = document.addObject("Part::Feature", "BOLTS_part")
+        part.Label = name
+
+        beam = F.extrude(Vector(0, 0, le))
+        part.Shape = beam
+
+
 def ibeam_parallel_flange(params, document):
     # key = params['type']  # not used
     h = params["h"]
