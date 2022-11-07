@@ -25,16 +25,16 @@ id: profile_i
 license: LGPL 2.1+ <http://www.gnu.org/licenses/lgpl-2.1>
 name: Profiles I
 classes:
-- id: ibeam_bluescope
+- id: ibeam_universal_bluescope
   names:
-    description: BlueScope profile, metric Australian Lysaght i-beam profile
+    description: BlueScope profile, metric Australian Lysaght i-beam universal profile
     labeling: '%(type)s, l=%(l)s'
-    name: BlueScope i-beam profile
+    name: BlueScope i-beam universal profile
   notes: http://en.wikipedia.org/wiki/I-beam
   parameters:
     defaults:
       l: 1000
-      type: 100UC15
+      type: 100UC14.8
     description:
       b: flange width
       h: beam height
@@ -46,7 +46,7 @@ classes:
     free: [type, l]
     tables:
       columns:  [h, b, tf, tw, r]
-      data: !include profile_i/ibeam_bluescope.yaml
+      data: !include profile_i/ibeam_universal_bluescope.yaml
       index: type
     types:
       b: Length (mm)
@@ -56,13 +56,49 @@ classes:
       tf: Length (mm)
       tw: Length (mm)
       type: Table Index
-  source: https://cdn.dcs.bluescope.com.au/download/the-lysaght-referee-35th-edition#page=249
+  source: One Steel Manufacturing Hot Rolled and Structured Steel Products 7th Ed. (pages 16-19)
   standards:
     body: None
-    description: BlueScope profile, metric Australia Lysaght i-beam profile
+    description: BlueScope profile, metric Australia Lysaght i-beam universal profile
     group: Company BlueScope
     labeling: BlueScope %(type)s, l=%(l)s
-    standard: BlueScope i-beam
+    standard: BlueScope universal i-beam
+- id: ibeam_welded_bluescope
+  names:
+    description: BlueScope profile, metric Australian Lysaght i-beam welded profile
+    labeling: '%(type)s, l=%(l)s'
+    name: BlueScope i-beam welded profile
+  notes: http://en.wikipedia.org/wiki/I-beam
+  parameters:
+    defaults:
+      l: 1000
+      type: 500WC440
+    description:
+      b: flange width
+      h: beam height
+      l: beam length
+      tf: flange thickness
+      tw: web thickness
+      type: beam type
+    free: [type, l]
+    tables:
+      columns:  [h, b, tf, tw]
+      data: !include profile_i/ibeam_welded_bluescope.yaml
+      index: type
+    types:
+      b: Length (mm)
+      h: Length (mm)
+      l: Length (mm)
+      tf: Length (mm)
+      tw: Length (mm)
+      type: Table Index
+  source: One Steel Manufacturing Hot Rolled and Structured Steel Products 7th Ed. (pages 12-15)
+  standards:
+    body: None
+    description: BlueScope profile, metric Australia Lysaght i-beam welded profile
+    group: Company BlueScope
+    labeling: BlueScope %(type)s, l=%(l)s
+    standard: BlueScope welded i-beam
 - id: ibeam_hea
   names:
     description: HEA profile, metric european standard i-beam profile
