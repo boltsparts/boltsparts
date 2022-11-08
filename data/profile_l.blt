@@ -44,7 +44,7 @@ classes:
       type: beam type
     free: [type, l]
     tables:
-      columns: [t, r1, r2, a]
+      columns: [a, t, r1, r2]
       data: !include profile_l/lbeam_bluescope_equal.yaml
       index: type
     types:
