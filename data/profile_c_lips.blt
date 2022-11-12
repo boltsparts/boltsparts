@@ -41,11 +41,11 @@ classes:
       l: beam length
       t: thickness
       ll: lip length
+      r: fillet radius
       type: beam type
     free: [type, l]
     tables:
-      columns:
-      columns: [t, h, b, ll]
+      columns: [h, b, t, ll, r]
       data: !include profile_c_lips/cbeam_bluescope_lips.yaml
       index: type
     types:
@@ -54,6 +54,7 @@ classes:
       l: Length (mm)
       t: Length (mm)
       ll: Length (mm)
+      r: Length (mm)
       type: Table Index
   source: https://www.stramit.com.au/assets/Technical-Resource-Documents/8924905442/Stramit-Purlins-Girts-And-Bridging-Product-Technical-Manual.pdf (pages 4, 7-10)
   standards:
