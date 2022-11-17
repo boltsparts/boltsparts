@@ -1,0 +1,65 @@
+# ******************************************************************************
+# BOLTS - Open Library of Technical Specifications                             *
+#                                                                              *
+# Copyright (C) 2016 Bernd Hahnebach <bernd@bimstatik.org>                     *
+#                                                                              *
+# This library is free software; you can redistribute it and/or                *
+# modify it under the terms of the GNU Lesser General Public                   *
+# License as published by the Free Software Foundation; either                 *
+# version 2.1 of the License, or any later version.                            *
+#                                                                              *
+# This library is distributed in the hope that it will be useful,              *
+# but WITHOUT ANY WARRANTY; without even the implied warranty of               *
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU             *
+# Lesser General Public License for more details.                              *
+#                                                                              *
+# You should have received a copy of the GNU Lesser General Public             *
+# License along with this library; if not, write to the Free Software          *
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA *
+# ******************************************************************************
+
+author: Andrej <@Andrej730>
+blt-version: 0.4
+description: Various cold-formed C profiles with lips
+id: profile_c_lips
+license: LGPL 2.1+ <http://www.gnu.org/licenses/lgpl-2.1>
+name: Profiles C with Lips
+classes:
+- id: cbeam_bluescope_lips
+  names:
+    description: BlueScope profile, metric Australian Lysaght cold-formed c-beam profile with lips
+    labeling: '%(type)s, l=%(l)s'
+    name: BlueScope c-beam Profile with lips
+  notes: http://en.wikipedia.org/wiki/Structural_steel
+  parameters:
+    defaults:
+      l: 1000
+      type: C10010
+    description:
+      b: flange width
+      h: beam height
+      l: beam length
+      t: thickness
+      ll: lip length
+      r: fillet radius
+      type: beam type
+    free: [type, l]
+    tables:
+      columns: [h, b, t, ll, r]
+      data: !include profile_c_lips/cbeam_bluescope_lips.yaml
+      index: type
+    types:
+      b: Length (mm)
+      h: Length (mm)
+      l: Length (mm)
+      t: Length (mm)
+      ll: Length (mm)
+      r: Length (mm)
+      type: Table Index
+  source: https://www.stramit.com.au/assets/Technical-Resource-Documents/8924905442/Stramit-Purlins-Girts-And-Bridging-Product-Technical-Manual.pdf (pages 4, 7-10)
+  standards:
+    body: None
+    description: BlueScope profile, metric Australia Lysaght cold-formed c-beam profile with lips
+    group: Company BlueScope
+    labeling: BlueScope %(type)s, l=%(l)s
+    standard: BlueScope c-beam with lips
