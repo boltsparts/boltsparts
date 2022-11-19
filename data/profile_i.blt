@@ -116,10 +116,19 @@ classes:
       r: fillet radius
       tf: flange thickness
       tw: web thickness
+      A: section area
+      Iy: moment of inertia wrt y axis
+      Zy: elastic section modulus wrt y axis
+      Sy: plastic section modulus wrt y axis
+      Iz: moment of inertia wrt z axis
+      Zz: elastic section modulus wrt z axis
+      Sz: plastic section modulus wrt z axis
+      It: torsion constant
+      Cw: warping constant
       type: beam type
     free: [type, l]
     tables:
-      columns:  [h, b, tw, tf, r]
+      columns:  [h, b, tw, tf, r, A, Iy, Zy, Sy, Iz, Zz, Sz, It, Cw]
       data: !include profile_i/ibeam_hea.yaml
       index: type
     types:
@@ -129,6 +138,15 @@ classes:
       r: Length (mm)
       tf: Length (mm)
       tw: Length (mm)
+      A: Area (mm^2)
+      Iy: Second Moment of Area (mm^4)
+      Zy: First Moment of Area (mm^3)
+      Sy: First Moment of Area (mm^3)
+      Iz: Second Moment of Area (mm^4)
+      Zz: First Moment of Area (mm^3)
+      Sz: First Moment of Area (mm^3)
+      It: Second Moment of Area (mm^4)
+      Cw: Fourth Moment of Area (mm^6)
       type: Table Index
   source: http://www.bauforumstahl.de/Querschnittswerte
   standards:
@@ -512,10 +530,19 @@ classes:
       r: fillet radius
       tf: flange thickness
       tw: web thickness
+      A: section area
+      Iy: moment of inertia wrt y axis
+      Zy: elastic section modulus wrt y axis
+      Sy: plastic section modulus wrt y axis
+      Iz: moment of inertia wrt z axis
+      Zz: elastic section modulus wrt z axis
+      Sz: plastic section modulus wrt z axis
+      It: torsion constant
+      Cw: warping constant
       type: beam type
     free: [type, l]
     tables:
-      columns:  [h, b, tw, tf, r]
+      columns:  [h, b, tw, tf, r, A, Iy, Zy, Sy, Iz, Zz, Sz, It, Cw]
       data: !include profile_i/ibeam_w_imp.yaml
       index: type
     types:
@@ -525,6 +552,15 @@ classes:
       r: Length (in)
       tf: Length (in)
       tw: Length (in)
+      A: Area (in^2)
+      Iy: Second Moment of Area (in^4)
+      Zy: First Moment of Area (in^3)
+      Sy: First Moment of Area (in^3)
+      Iz: Second Moment of Area (in^4)
+      Zz: First Moment of Area (in^3)
+      Sz: First Moment of Area (in^3)
+      It: Second Moment of Area (in^4)
+      Cw: Fourth Moment of Area (in^6)
       type: Table Index
   source: http://www.bauforumstahl.de/Querschnittswerte
   standards:
