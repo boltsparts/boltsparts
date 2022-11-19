@@ -112,6 +112,14 @@ ALL_TYPES = [
     "Bool",
     "Length (mm)",
     "Length (in)",
+    "Area (mm^2)",
+    "Area (in^2)",
+    "First Moment of Area (mm^3)",
+    "First Moment of Area (in^3)",
+    "Second Moment of Area (mm^4)",
+    "Second Moment of Area (in^4)",
+    "Fourth Moment of Area (mm^6)",
+    "Fourth Moment of Area (in^6)",
     "Number",
     "String",
     "Table Index",
@@ -120,6 +128,14 @@ UNITS = {
     "Angle (deg)": "deg",
     "Length (mm)": "mm",
     "Length (in)": "in",
+    "Area (mm^2)": "mm^2",
+    "Area (in^2)": "in^2",
+    "First Moment of Area (mm^3)": "mm^3",
+    "First Moment of Area (in^3)": "in^3",
+    "Second Moment of Area (mm^4)": "mm^4",
+    "Second Moment of Area (in^4)": "in^4",
+    "Fourth Moment of Area (mm^6)": "mm^6",
+    "Fourth Moment of Area (in^6)": "in^6",
 }
 
 
@@ -128,8 +144,32 @@ def convert_raw_parameter_value(pname, tname, value):
     Convert from strings from YAML parsing to python types
     and check conformity with the corresponding BOLTS type
     """
-    numbers = ["Length (mm)", "Length (in)", "Number", "Angle (deg)"]
-    positive = ["Length (mm)", "Length (in)"]
+    numbers = [
+        "Length (mm)",
+        "Length (in)",
+        "Number",
+        "Angle (deg)",
+        "Area (mm^2)",
+        "Area (in^2)",
+        "First Moment of Area (mm^3)",
+        "First Moment of Area (in^3)",
+        "Second Moment of Area (mm^4)",
+        "Second Moment of Area (in^4)",
+        "Fourth Moment of Area (mm^6)",
+        "Fourth Moment of Area (in^6)",
+    ]
+    positive = [
+        "Length (mm)",
+        "Length (in)",
+        "Area (mm^2)",
+        "Area (in^2)",
+        "First Moment of Area (mm^3)",
+        "First Moment of Area (in^3)",
+        "Second Moment of Area (mm^4)",
+        "Second Moment of Area (in^4)",
+        "Fourth Moment of Area (mm^6)",
+        "Fourth Moment of Area (in^6)",
+    ]
 
     # Check
     if tname not in ALL_TYPES:
@@ -382,7 +422,15 @@ class Parameters:
         "Bool": False,
         "Table Index": "",
         "String": "",
-        "Angle (deg)": 0
+        "Angle (deg)": 0,
+        "Area (mm^2)": 1,
+        "Area (in^2)": 1,
+        "First Moment of Area (mm^3)": 1,
+        "First Moment of Area (in^3)": 1,
+        "Second Moment of Area (mm^4)": 1,
+        "Second Moment of Area (in^4)": 1,
+        "Fourth Moment of Area (mm^6)": 1,
+        "Fourth Moment of Area (in^6)": 1,
     }
 
     def __init__(self, param):
