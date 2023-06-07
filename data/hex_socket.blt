@@ -420,7 +420,6 @@ classes:
     parameters:
       free: [key,l,point]
       types:
-      types:
         key: Table Index
         l: Length (mm)
         d: Length (mm)
