@@ -237,7 +237,7 @@ classes:
           nice: ISO 4017
         labeling:
           nice: Hexagon head screw ISO 4017 %(key)s - %(l)s
-          nice: hexagon_head_screw_ISO4017_%(key)s_%(l)s
+          safe: hexagon_head_screw_ISO4017_%(key)s_%(l)s
         description: Hexagon head screw according to ISO4017
       - body: DINENISO
         standard:
