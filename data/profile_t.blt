@@ -64,7 +64,7 @@ classes:
     description: ST profile, imperial US standard t-beam profile
     group: AISC 
     labeling: AISC Shapes Database v15.0 %(type)s, l=%(l)s
-    standard: AISC Shapes Database v15.0
+    standard: AISC Shapes Database v15.0 ST Profile
 - id: tbeam_wt_imp
   names:
     description: WT profile, imperial US standard t-beam profile
@@ -102,7 +102,7 @@ classes:
     description: WT profile, imperial US standard t-beam profile
     group: AISC 
     labeling: AISC Shapes Database v15.0 %(type)s, l=%(l)s
-    standard: AISC Shapes Database v15.0
+    standard: AISC Shapes Database v15.0 WT Profile
 - id: tbeam_mt_imp
   names:
     description: MT profile, imperial US standard t-beam profile
@@ -140,5 +140,5 @@ classes:
     description: MT profile, imperial US standard t-beam profile. Structural Tees Cut from M Shapes
     group: AISC 
     labeling: AISC Shapes Database v15.0 %(type)s, l=%(l)s
-    standard: AISC Shapes Database v15.0
+    standard: AISC Shapes Database v15.0 MT Profile
 

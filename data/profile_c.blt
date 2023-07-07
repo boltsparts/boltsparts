@@ -217,7 +217,7 @@ classes:
     description: MC profile, imperial US standard i-beam profile
     group: AISC 
     labeling: AISC Shapes Database v15.0 %(type)s, l=%(l)s
-    standard: AISC Shapes Database v15.0
+    standard: AISC Shapes Database v15.0 MC Profile
 - id: cbeam_c_imp
   names:
     description: C profile, imperial US standard c-beam profile
@@ -259,4 +259,4 @@ classes:
     description: C profile, imperial US standard c-beam profile
     group: AISC 
     labeling: AISC Shapes Database v15.0 %(type)s, l=%(l)s
-    standard: AISC Shapes Database v15.0
+    standard: AISC Shapes Database v15.0 C Profile

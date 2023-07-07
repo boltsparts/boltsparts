@@ -356,7 +356,6 @@ classes:
       t: Length (in)
       ri: Length (in)
       ro: Length (in)
-      sf: Angle (deg)
       type: Table Index
   source: https://www.aisc.org/globalassets/aisc/manual/v15.0-shapes-database/aisc-shapes-database-v15.0.xlsx
   standards:
@@ -364,7 +363,7 @@ classes:
     description: Rectangle HSS profile, imperial US standard rectangle hollow section profile
     group: AISC 
     labeling: AISC Shapes Database v15.0 %(type)s, l=%(l)s
-    standard: AISC Shapes Database v15.0
+    standard: AISC Shapes Database v15.0 Rectangle HSS Profile
 - id: pipe_imp
   names:
     description: Circle PIPE profile, imperial US standard circle section profile
@@ -395,7 +394,7 @@ classes:
     description: Circle PIPE profile, imperial US standard circle section profile
     group: AISC 
     labeling: AISC Shapes Database v15.0 %(type)s, l=%(l)s
-    standard: AISC Shapes Database v15.0
+    standard: AISC Shapes Database v15.0 PIPE Profile
 - id: circle_hss_imp
   names:
     description: Circle HSS profile, imperial US standard circle section profile
@@ -426,6 +425,6 @@ classes:
     description: Circle HSS profile, imperial US standard circle section profile
     group: AISC 
     labeling: AISC Shapes Database v15.0 %(type)s, l=%(l)s
-    standard: AISC Shapes Database v15.0
+    standard: AISC Shapes Database v15.0 Circle HSS Profile
 
 
