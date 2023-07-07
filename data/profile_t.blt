@@ -1,0 +1,146 @@
+# ******************************************************************************
+# BOLTS - Open Library of Technical Specifications                             *
+#                                                                              *
+# Copyright (C) 2016 Bernd Hahnebach <bernd@bimstatik.org>                     *
+#                                                                              *
+# This library is free software; you can redistribute it and/or                *
+# modify it under the terms of the GNU Lesser General Public                   *
+# License as published by the Free Software Foundation; either                 *
+# version 2.1 of the License, or any later version.                            *
+#                                                                              *
+# This library is distributed in the hope that it will be useful,              *
+# but WITHOUT ANY WARRANTY; without even the implied warranty of               *
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU             *
+# Lesser General Public License for more details.                              *
+#                                                                              *
+# You should have received a copy of the GNU Lesser General Public             *
+# License along with this library; if not, write to the Free Software          *
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA *
+# ******************************************************************************
+
+author: Andrej <@Andrej730>
+blt-version: 0.4
+description: Various hotrolled T profiles
+id: profile_t
+license: LGPL 2.1+ <http://www.gnu.org/licenses/lgpl-2.1>
+name: Profiles T
+classes:
+- id: tbeam_st_imp
+  names:
+    description: ST profile, imperial US standard t-beam profile
+    labeling: '%(type)s, l=%(l)s'
+    name: ST Profile
+  notes: AISC Shapes Database v15.0, November 2017, https://www.aisc.org/globalassets/aisc/manual/v15.0-shapes-database/aisc-shapes-database-v15.0.xlsx
+  parameters:
+    defaults:
+      l: 12
+      type: ST12X60.5
+    description:
+      b: flange width
+      h: beam height
+      l: beam length
+      r1: root fillet radius
+      r2: toe fillet radius
+      tf: flange thickness
+      tw: web thickness
+      sf: flange slope
+      type: beam type
+    free: [type, l]
+    tables:
+      columns:  [h, b, tw, tf, sf, r1, r2]
+      data: !include profile_t/tbeam_st_imp.yaml
+      index: type
+    types:
+      b: Length (in)
+      h: Length (in)
+      l: Length (in)
+      r1: Length (in)
+      r2: Length (in)
+      tf: Length (in)
+      tw: Length (in)
+      sf: Slope (percent)
+      type: Table Index
+  source: https://www.aisc.org/globalassets/aisc/manual/v15.0-shapes-database/aisc-shapes-database-v15.0.xlsx
+  standards:
+    body: AISC
+    description: ST profile, imperial US standard t-beam profile
+    group: AISC 
+    labeling: AISC Shapes Database v15.0 %(type)s, l=%(l)s
+    standard: AISC Shapes Database v15.0
+- id: tbeam_wt_imp
+  names:
+    description: WT profile, imperial US standard t-beam profile
+    labeling: '%(type)s, l=%(l)s'
+    name: wt Profile
+  notes: AISC Shapes Database v15.0, November 2017, https://www.aisc.org/globalassets/aisc/manual/v15.0-shapes-database/aisc-shapes-database-v15.0.xlsx
+  parameters:
+    defaults:
+      l: 12
+      type: WT22X167.5
+    description:
+      b: flange width
+      h: beam height
+      l: beam length
+      r: root fillet radius
+      tf: flange thickness
+      tw: web thickness
+      type: beam type
+    free: [type, l]
+    tables:
+      columns:  [h, b, tw, tf, r]
+      data: !include profile_t/tbeam_wt_imp.yaml
+      index: type
+    types:
+      b: Length (in)
+      h: Length (in)
+      l: Length (in)
+      r: Length (in)
+      tf: Length (in)
+      tw: Length (in)
+      type: Table Index
+  source: https://www.aisc.org/globalassets/aisc/manual/v15.0-shapes-database/aisc-shapes-database-v15.0.xlsx
+  standards:
+    body: AISC
+    description: WT profile, imperial US standard t-beam profile
+    group: AISC 
+    labeling: AISC Shapes Database v15.0 %(type)s, l=%(l)s
+    standard: AISC Shapes Database v15.0
+- id: tbeam_mt_imp
+  names:
+    description: MT profile, imperial US standard t-beam profile
+    labeling: '%(type)s, l=%(l)s'
+    name: MT Profile
+  notes: AISC Shapes Database v15.0, November 2017, https://www.aisc.org/globalassets/aisc/manual/v15.0-shapes-database/aisc-shapes-database-v15.0.xlsx
+  parameters:
+    defaults:
+      l: 12
+      type: MT6.25X6.2
+    description:
+      b: flange width
+      h: beam height
+      l: beam length
+      r: root fillet radius
+      tf: flange thickness
+      tw: web thickness
+      type: beam type
+    free: [type, l]
+    tables:
+      columns:  [h, b, tw, tf, r]
+      data: !include profile_t/tbeam_mt_imp.yaml
+      index: type
+    types:
+      b: Length (in)
+      h: Length (in)
+      l: Length (in)
+      r: Length (in)
+      tf: Length (in)
+      tw: Length (in)
+      type: Table Index
+  source: https://www.aisc.org/globalassets/aisc/manual/v15.0-shapes-database/aisc-shapes-database-v15.0.xlsx
+  standards:
+    body: AISC
+    description: MT profile, imperial US standard t-beam profile. Structural Tees Cut from M Shapes
+    group: AISC 
+    labeling: AISC Shapes Database v15.0 %(type)s, l=%(l)s
+    standard: AISC Shapes Database v15.0
+

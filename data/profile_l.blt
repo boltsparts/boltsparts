@@ -173,4 +173,76 @@ classes:
     group: DINEN10056-1
     labeling: DINEN10056-1 %(type)s, l=%(l)s
     standard: DINEN10056-1 unequal
-    
+- id: lbeam_2l_imp
+  names:
+    description: 2L profile, imperial US standard l-beam profile
+    labeling: '%(type)s, l=%(l)s'
+    name: 2L Profile
+  notes: AISC Shapes Database v15.0, November 2017, https://www.aisc.org/globalassets/aisc/manual/v15.0-shapes-database/aisc-shapes-database-v15.0.xlsx
+  parameters:
+    defaults:
+      l: 12
+      type: 2L12X12X1-3/8
+    description:
+      a: beam height
+      b: beam width
+      l: beam length
+      t: thickness
+      type: beam type
+    free: [type, l]
+    tables:
+      columns:  [b, a, t]
+      data: !include profile_l/lbeam_2l_imp.yaml
+      index: type
+    types:
+      a: Length (in)
+      b: Length (in)
+      l: Length (in)
+      t: Length (in)
+      type: Table Index
+  source: https://www.aisc.org/globalassets/aisc/manual/v15.0-shapes-database/aisc-shapes-database-v15.0.xlsx
+  standards:
+    body: AISC
+    description: 2L profile, imperial US standard l-beam profile
+    group: AISC 
+    labeling: AISC Shapes Database v15.0 %(type)s, l=%(l)s
+    standard: AISC Shapes Database v15.0
+- id: lbeam_l_imp
+  names:
+    description: L profile, imperial US standard l-beam profile
+    labeling: '%(type)s, l=%(l)s'
+    name: L Profile
+  notes: AISC Shapes Database v15.0, November 2017, https://www.aisc.org/globalassets/aisc/manual/v15.0-shapes-database/aisc-shapes-database-v15.0.xlsx
+  parameters:
+    defaults:
+      l: 12
+      type: L12X12X1-3/8
+    description:
+      a: beam height
+      b: beam width
+      l: beam length
+      r1: root fillet radius
+      r2: toe fillet radius
+      t: thickness
+      type: beam type
+    free: [type, l]
+    tables:
+      columns:  [b, a, t, r1, r2]
+      data: !include profile_l/lbeam_l_imp.yaml
+      index: type
+    types:
+      a: Length (in)
+      b: Length (in)
+      l: Length (in)
+      r1: Length (in)
+      r2: Length (in)
+      t: Length (in)
+      type: Table Index
+  source: https://www.aisc.org/globalassets/aisc/manual/v15.0-shapes-database/aisc-shapes-database-v15.0.xlsx
+  standards:
+    body: AISC
+    description: L profile, imperial US standard l-beam profile
+    group: AISC 
+    labeling: AISC Shapes Database v15.0 %(type)s, l=%(l)s
+    standard: AISC Shapes Database v15.0
+  
