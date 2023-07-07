@@ -556,7 +556,7 @@ classes:
     free: [type, l]
     tables:
       columns:  [h, b, tw, tf, sf, r1, r2]
-      data: !include profile_i/ibeam_w_imp.yaml
+      data: !include profile_i/ibeam_s_imp.yaml
       index: type
     types:
       b: Length (in)

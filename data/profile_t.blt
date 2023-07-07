@@ -41,13 +41,12 @@ classes:
       l: beam length
       r1: root fillet radius
       r2: toe fillet radius
-      tf: flange thickness
       tw: web thickness
-      sf: flange slope
+      tf: flange thickness
       type: beam type
     free: [type, l]
     tables:
-      columns:  [h, b, tw, tf, sf, r1, r2]
+      columns:  [h, b, tw, tf, r1, r2]
       data: !include profile_t/tbeam_st_imp.yaml
       index: type
     types:
@@ -56,9 +55,8 @@ classes:
       l: Length (in)
       r1: Length (in)
       r2: Length (in)
-      tf: Length (in)
       tw: Length (in)
-      sf: Angle (deg)
+      tf: Length (in)
       type: Table Index
   source: https://www.aisc.org/globalassets/aisc/manual/v15.0-shapes-database/aisc-shapes-database-v15.0.xlsx
   standards:
