@@ -182,7 +182,7 @@ classes:
   parameters:
     defaults:
       l: 12
-      type: 2L12X12X1-3/8
+      type: 2L12X12X1-3_8
     description:
       a: beam height
       b: beam width
@@ -216,7 +216,7 @@ classes:
   parameters:
     defaults:
       l: 12
-      type: L12X12X1-3/8
+      type: L12X12X1-3_8
     description:
       a: beam height
       b: beam width
