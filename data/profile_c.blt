@@ -176,7 +176,7 @@ classes:
     description: UPN profile, metric european standard c-beam profile
     labeling: DIN 1026-1 %(type)s, l=%(l)s
     standard: DIN 1026-1
-  - id: cbeam_mc_imp
+- id: cbeam_mc_imp
   names:
     description: MC profile, imperial US standard c-beam profile
     labeling: '%(type)s, l=%(l)s'
@@ -209,7 +209,7 @@ classes:
       r2: Length (in)
       tf: Length (in)
       tw: Length (in)
-      sf: Slope (percent)
+      sf: Angle (deg)
       type: Table Index
   source: https://www.aisc.org/globalassets/aisc/manual/v15.0-shapes-database/aisc-shapes-database-v15.0.xlsx
   standards:
@@ -251,7 +251,7 @@ classes:
       r2: Length (in)
       tf: Length (in)
       tw: Length (in)
-      sf: Slope (percent)
+      sf: Angle (deg)
       type: Table Index
   source: https://www.aisc.org/globalassets/aisc/manual/v15.0-shapes-database/aisc-shapes-database-v15.0.xlsx
   standards:

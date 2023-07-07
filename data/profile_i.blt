@@ -566,7 +566,7 @@ classes:
       r2: Length (in)
       tf: Length (in)
       tw: Length (in)
-      sf: Slope (percent)
+      sf: Angle (deg)
       type: Table Index
   source: https://www.aisc.org/globalassets/aisc/manual/v15.0-shapes-database/aisc-shapes-database-v15.0.xlsx
   standards:

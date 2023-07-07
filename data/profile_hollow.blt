@@ -356,7 +356,7 @@ classes:
       t: Length (in)
       ri: Length (in)
       ro: Length (in)
-      sf: Slope (percent)
+      sf: Angle (deg)
       type: Table Index
   source: https://www.aisc.org/globalassets/aisc/manual/v15.0-shapes-database/aisc-shapes-database-v15.0.xlsx
   standards:
@@ -387,7 +387,7 @@ classes:
     types:
       D: Length (in)
       l: Length (in)
-      sf: Slope (percent)
+      sf: Angle (deg)
       type: Table Index
   source: https://www.aisc.org/globalassets/aisc/manual/v15.0-shapes-database/aisc-shapes-database-v15.0.xlsx
   standards:
@@ -418,7 +418,7 @@ classes:
     types:
       D: Length (in)
       l: Length (in)
-      sf: Slope (percent)
+      sf: Angle (deg)
       type: Table Index
   source: https://www.aisc.org/globalassets/aisc/manual/v15.0-shapes-database/aisc-shapes-database-v15.0.xlsx
   standards:
