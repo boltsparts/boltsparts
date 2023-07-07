@@ -386,7 +386,6 @@ classes:
     types:
       D: Length (in)
       l: Length (in)
-      sf: Angle (deg)
       type: Table Index
   source: https://www.aisc.org/globalassets/aisc/manual/v15.0-shapes-database/aisc-shapes-database-v15.0.xlsx
   standards:
@@ -417,7 +416,6 @@ classes:
     types:
       D: Length (in)
       l: Length (in)
-      sf: Angle (deg)
       type: Table Index
   source: https://www.aisc.org/globalassets/aisc/manual/v15.0-shapes-database/aisc-shapes-database-v15.0.xlsx
   standards:
