@@ -188,10 +188,11 @@ classes:
       b: beam width
       l: beam length
       t: thickness
+      g: profiles gap
       type: beam type
     free: [type, l]
     tables:
-      columns:  [b, a, t]
+      columns:  [b, a, t, g]
       data: !include profile_l/lbeam_2l_imp.yaml
       index: type
     types:
@@ -199,6 +200,7 @@ classes:
       b: Length (in)
       l: Length (in)
       t: Length (in)
+      g: Length (in)
       type: Table Index
   source: https://www.aisc.org/globalassets/aisc/manual/v15.0-shapes-database/aisc-shapes-database-v15.0.xlsx
   standards:
