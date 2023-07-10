@@ -176,3 +176,87 @@ classes:
     description: UPN profile, metric european standard c-beam profile
     labeling: DIN 1026-1 %(type)s, l=%(l)s
     standard: DIN 1026-1
+- id: cbeam_mc_imp
+  names:
+    description: MC profile, imperial US standard c-beam profile
+    labeling: '%(type)s, l=%(l)s'
+    name: MC Profile
+  notes: AISC Shapes Database v15.0, November 2017, https://www.aisc.org/globalassets/aisc/manual/v15.0-shapes-database/aisc-shapes-database-v15.0.xlsx
+  parameters:
+    defaults:
+      l: 12
+      type: MC18X58
+    description:
+      b: flange width
+      h: beam height
+      l: beam length
+      r1: root fillet radius
+      r2: toe fillet radius
+      tf: flange thickness
+      tw: web thickness
+      sf: flange slope
+      type: beam type
+    free: [type, l]
+    tables:
+      columns:  [h, b, tw, tf, sf, r1, r2]
+      data: !include profile_c/cbeam_mc_imp.yaml
+      index: type
+    types:
+      b: Length (in)
+      h: Length (in)
+      l: Length (in)
+      r1: Length (in)
+      r2: Length (in)
+      tf: Length (in)
+      tw: Length (in)
+      sf: Angle (deg)
+      type: Table Index
+  source: https://www.aisc.org/globalassets/aisc/manual/v15.0-shapes-database/aisc-shapes-database-v15.0.xlsx
+  standards:
+    body: AISC
+    description: MC profile, imperial US standard i-beam profile
+    group: AISC 
+    labeling: AISC Shapes Database v15.0 %(type)s, l=%(l)s
+    standard: AISC Shapes Database v15.0 MC Profile
+- id: cbeam_c_imp
+  names:
+    description: C profile, imperial US standard c-beam profile
+    labeling: '%(type)s, l=%(l)s'
+    name: C Profile
+  notes: AISC Shapes Database v15.0, November 2017, https://www.aisc.org/globalassets/aisc/manual/v15.0-shapes-database/aisc-shapes-database-v15.0.xlsx
+  parameters:
+    defaults:
+      l: 12
+      type: C15X50
+    description:
+      b: flange width
+      h: beam height
+      l: beam length
+      r1: root fillet radius
+      r2: toe fillet radius
+      tf: flange thickness
+      tw: web thickness
+      sf: flange slope
+      type: beam type
+    free: [type, l]
+    tables:
+      columns:  [h, b, tw, tf, sf, r1, r2]
+      data: !include profile_c/cbeam_c_imp.yaml
+      index: type
+    types:
+      b: Length (in)
+      h: Length (in)
+      l: Length (in)
+      r1: Length (in)
+      r2: Length (in)
+      tf: Length (in)
+      tw: Length (in)
+      sf: Angle (deg)
+      type: Table Index
+  source: https://www.aisc.org/globalassets/aisc/manual/v15.0-shapes-database/aisc-shapes-database-v15.0.xlsx
+  standards:
+    body: AISC
+    description: C profile, imperial US standard c-beam profile
+    group: AISC 
+    labeling: AISC Shapes Database v15.0 %(type)s, l=%(l)s
+    standard: AISC Shapes Database v15.0 C Profile
